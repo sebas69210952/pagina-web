@@ -1,0 +1,46 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Ejemplo para SumarElementosVector
+        int[] vector = {1, 2, 3, 4, 5, 6};
+        Console.WriteLine($"La suma de los elementos del vector es: {SumarElementosVector(vector)}");
+
+        // Ejemplo para VoltearVector
+        int[] vectorOriginal = {1, 2, 3, 4, 5};
+        int[] vectorVolteado = VoltearVector(vectorOriginal);
+        Console.WriteLine("El vector volteado es:");
+        ImprimirVector(vectorVolteado);
+    }
+
+    static int SumarElementosVector(int[] vector)
+    {
+        int suma = 0;
+        foreach (int elemento in vector)
+        {
+            suma += elemento;
+        }
+        return suma;
+    }
+
+    static int[] VoltearVector(int[] vector)
+    {
+        int[] resultado = new int[vector.Length];
+        for (int i = 0; i < vector.Length; i++)
+        {
+            resultado[i] = vector[vector.Length - 1 - i];
+        }
+        return resultado;
+    }
+
+    static void ImprimirVector(int[] vector)
+    {
+        foreach (int elemento in vector)
+        {
+            Console.Write($"{elemento} ");
+        }
+        Console.WriteLine();
+    }
+}
